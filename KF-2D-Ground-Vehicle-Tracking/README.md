@@ -94,3 +94,7 @@ See:
 - `docs/animation_pipeline.md`
 
 This project is intentionally structured as a foundation for future estimator extensions such as EKF, UKF, and particle filters.
+
+## License
+
+This project is licensed under the MIT License.
