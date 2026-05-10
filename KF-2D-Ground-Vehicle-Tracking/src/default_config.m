@@ -22,8 +22,17 @@ cfg.P0 = diag([20^2, 20^2, 8^2, 8^2]);
 
 % Plotting and output.
 cfg.resultsDir = fullfile(fileparts(fileparts(mfilename("fullpath"))), "results");
-cfg.enableAnimation = false;
-cfg.animationFrameSkip = 2;
+cfg.enableAnimation = true;
+
+cfg.animation.frameSkip = 2;
+cfg.animation.realTimePlayback = false;
+cfg.animation.playbackSpeed = 1.5;
+cfg.animation.exportGif = true;
+cfg.animation.gifFileName = "tracking_demo.gif";
+cfg.animation.gifDelay = 0.04;
+cfg.animation.showCovarianceEllipse = true;
+cfg.animation.ellipseNSigma = 2.4477; % ~95% for 2D Gaussian
+cfg.animation.closeFigureOnFinish = true;
 
 % Optional study switches.
 cfg.runTuningStudy = true;

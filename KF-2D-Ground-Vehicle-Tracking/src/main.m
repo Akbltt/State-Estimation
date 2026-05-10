@@ -19,7 +19,7 @@ plot_covariance_evolution(t, kfResult.PHist, cfg.resultsDir);
 plot_uncertainty_ellipses(t, xTrue, zMeas, kfResult.xHat, kfResult.PHist, cfg.resultsDir, cfg);
 
 if cfg.enableAnimation
-    animate_tracking(t, xTrue, zMeas, kfResult.xHat, cfg.resultsDir, cfg);
+    animate_tracking(t, xTrue, zMeas, kfResult.xHat, kfResult.PHist, cfg.resultsDir, cfg);
 end
 
 metrics = compute_metrics(xTrue, kfResult.xHat);

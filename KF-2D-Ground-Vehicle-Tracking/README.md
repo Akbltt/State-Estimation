@@ -30,9 +30,9 @@ The estimator uses a constant-velocity linear model to recover both position and
 
 ## Repository Layout
 
-- `src/` MATLAB implementation (simulation, KF core, plotting, tuning study)
+- `src/` MATLAB implementation (simulation, KF core, plotting, tuning study, animation)
 - `docs/` Engineering notes and analysis
-- `results/` Output plots and optional animation
+- `results/` Output plots and exported GIF
 
 ## Key Features
 
@@ -41,7 +41,7 @@ The estimator uses a constant-velocity linear model to recover both position and
 - Error plots with 3-sigma envelopes
 - Covariance evolution diagnostics
 - Optional 2D uncertainty ellipse visualization
-- Optional MP4 tracking animation
+- Stepwise tracking animation with GIF export for GitHub embedding
 
 ## Tuning Strategy
 
@@ -66,6 +66,12 @@ The tuning study compares six scenario sets by changing process-noise accelerati
 
 Generated outputs are saved in `results/`.
 
+## Tracking Demo
+
+The animation shows true vehicle motion, noisy GPS-like measurements, and Kalman Filter state estimates evolving step-by-step. Optional covariance ellipses visualize estimated position uncertainty over time.
+
+![Tracking demo](results/tracking_demo.gif)
+
 ## Example Output Visuals
 
 After running `main`, expected artifacts include:
@@ -74,6 +80,7 @@ After running `main`, expected artifacts include:
 - `results/estimation_errors.png`
 - `results/covariance_evolution.png`
 - `results/uncertainty_ellipses.png`
+- `results/tracking_demo.gif`
 - `results/tuning_study/tuning_error_comparison.png`
 - `results/tuning_study/tuning_rmse_summary.png`
 
@@ -84,5 +91,6 @@ See:
 - `docs/system_model.md`
 - `docs/tuning_analysis.md`
 - `docs/limitations.md`
+- `docs/animation_pipeline.md`
 
 This project is intentionally structured as a foundation for future estimator extensions such as EKF, UKF, and particle filters.
